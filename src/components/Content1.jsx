@@ -227,13 +227,7 @@ const Content1 = () => {
         </div>
 
         {/* Image */}
-        <div className="md:w-1/2 flex justify-center">
-          <img
-            src="/assets/images/owner/person.jpeg"
-            alt="Rajveer Singh - B.Tech CSE Student"
-            className="w-72 h-72 object-cover rounded-full shadow-lg border-4 border-blue-500"
-          />
-        </div>
+        
       </section>
 
       {/* About section */}
