@@ -1,152 +1,138 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  Menu,
+  X,
+  Code,
+  BarChart2,
+  Briefcase,
+  GraduationCap,
+  Mail,
+} from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  
-  // Track scroll position for navbar styling and active section
+
   useEffect(() => {
     const handleScroll = () => {
-      // Update navbar background
       setScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
+
       const sections = ['home', 'skills', 'projects', 'education', 'contact'];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
+      const currentSection = sections.find((section) => {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
           return rect.top <= 100 && rect.bottom > 100;
         }
         return false;
       });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
+
+      if (currentSection) setActiveSection(currentSection);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking a link
   const handleNavClick = (section) => {
     setActiveSection(section);
-    setIsOpen(false);
+    setIsOpen(false); // Close mobile menu on click
   };
 
-  // Handle scroll lock when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
-
-  // Navigation items
   const navItems = [
-    { name: 'Home', link: '#home', section: 'home' },
-    { name: 'Skills', link: '#skills', section: 'skills' },
-    { name: 'Projects', link: '#projects', section: 'projects' },
-    { name: 'Education', link: '#education', section: 'education' }
+    { name: 'Home', link: '#home', section: 'home', icon: <Code size={18} /> },
+    { name: 'Skills', link: '#skills', section: 'skills', icon: <BarChart2 size={18} /> },
+    { name: 'Projects', link: '#projects', section: 'projects', icon: <Briefcase size={18} /> },
+    { name: 'Education', link: '#education', section: 'education', icon: <GraduationCap size={18} /> },
   ];
 
+  const headerClasses = `fixed top-0 left-0 right-0 px-4 lg:px-8 py-4 z-50 transition-all duration-300 ${
+    scrolled ? 'bg-white dark:bg-gray-900 shadow-md' : 'bg-white dark:bg-gray-900'
+  }`;
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 transition-all duration-300 z-50
-          ${scrolled 
-          ? 'bg-indigo-950/95 backdrop-blur-md shadow-lg py-3' 
-          : 'bg-indigo-950 py-5'}`}
-    >
-      {/* Logo */}
-      <div className="flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
-          <span className="text-xl font-bold text-white">RS</span>
+    <header className={headerClasses}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-md hover:shadow-indigo-500/20 hover:scale-105 transition-transform duration-300">
+            <span className="text-lg font-bold text-white">RS</span>
+          </div>
+          <div className="text-xl md:text-2xl font-bold tracking-tight">
+            <span className="text-gray-900 dark:text-white">Rajveer</span>
+            <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"> Singh</span>
+          </div>
         </div>
-        <div className="text-2xl font-bold tracking-tight text-white">
-          Rajveer<span className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300"> Singh</span>
-        </div>
-      </div>
-      
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex md:items-center space-x-2">
-        {navItems.map((item) => (
-          <a
-            key={item.name}
-            href={item.link}
-            className={`relative px-4 py-2 font-medium rounded-md transition-all duration-300
-              ${activeSection === item.section 
-                ? 'text-white' 
-                : 'text-gray-300 hover:text-white'}`}
-            onClick={() => handleNavClick(item.section)}
-          >
-            <span>{item.name}</span>
-            <span 
-              className={`absolute bottom-0 left-0 h-0.5 bg-indigo-400 transition-all duration-300
-                ${activeSection === item.section ? 'w-full' : 'w-0 group-hover:w-full'}`}
-            ></span>
-          </a>
-        ))}
-        
-        {/* Contact Button with improved styling */}
-        <a
-          href="#contact"
-          onClick={() => handleNavClick('contact')}
-          className="ml-3 px-5 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-md shadow-md hover:from-indigo-500 hover:to-purple-500 hover:shadow-lg transform hover:translate-y-[-2px] transition-all duration-300 font-medium"
-        >
-          Contact Me
-        </a>
-      </nav>
-      
-      {/* Mobile Menu Toggle Button */}
-      <button
-        className="md:hidden flex items-center justify-center w-10 h-10 focus:outline-none z-50 text-white"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle Menu"
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-      
-      {/* Mobile Navigation - Improved with a fade-in animation */}
-      <div
-        className={`fixed inset-0 bg-indigo-950/98 backdrop-blur-lg transform transition-all duration-400 ease-in-out md:hidden
-          ${isOpen 
-            ? 'opacity-100 visible' 
-            : 'opacity-0 invisible'}`}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 p-5">
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.link}
-              className={`text-2xl font-semibold transition-colors duration-300 transform hover:scale-105
-                ${activeSection === item.section 
-                  ? 'text-indigo-300' 
-                  : 'text-white hover:text-indigo-300'}`}
+              className={`flex items-center px-4 py-2 rounded-lg font-medium text-sm md:text-base transition-all duration-300 ${
+                activeSection === item.section
+                  ? 'bg-indigo-100 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 shadow'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/60'
+              }`}
               onClick={() => handleNavClick(item.section)}
             >
+              <span className="mr-2">{item.icon}</span>
               {item.name}
             </a>
           ))}
-          
-          {/* Mobile Contact Button */}
           <a
             href="#contact"
-            className="mt-4 px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 text-xl font-medium"
             onClick={() => handleNavClick('contact')}
+            className="flex items-center px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-md hover:shadow-indigo-500/30 transform hover:-translate-y-0.5 transition-all duration-300 font-medium text-sm md:text-base"
           >
+            <Mail size={18} className="mr-2" />
             Contact Me
           </a>
-        </div>
+        </nav>
+
+        {/* Mobile Menu Toggle Button */}
+        <button
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg focus:outline-none z-50 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Menu (full screen) */}
+      {isOpen && (
+        <div className="fixed inset-0 md:hidden bg-white dark:bg-gray-900 z-40 flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center space-y-5 py-8 px-6 w-4/5 max-w-sm">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.link}
+                className={`flex items-center justify-center w-full px-6 py-3 rounded-xl font-medium text-base transition-all duration-300 ${
+                  activeSection === item.section
+                    ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 shadow-sm'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/60'
+                }`}
+                onClick={() => handleNavClick(item.section)}
+              >
+                <span className="mr-3">{item.icon}</span>
+                {item.name}
+              </a>
+            ))}
+
+            <a
+              href="#contact"
+              onClick={() => handleNavClick('contact')}
+              className="mt-4 flex items-center justify-center w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg hover:shadow-indigo-500/30 duration-300 font-medium text-base"
+            >
+              <Mail size={18} className="mr-3" />
+              Contact Me
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
