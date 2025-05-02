@@ -37,8 +37,8 @@ const Footer = () => {
               name="email"
               placeholder="Enter your email"
               required
-              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black"
-            />
+              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black bg-white"
+              />
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg"
