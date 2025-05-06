@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import personImage from '../assets/images/Owner/Person.jpeg';
+
+import project2 from '../assets/images/Projects/Project2.png';
+import project4 from '../assets/images/Projects/project4.png';
+
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -22,63 +27,47 @@ const skillsData = [
   {
     category: 'Programming Languages',
     skills: [
-      { name: 'Python', icon: 'fab fa-python', level: 60 },
-      { name: 'Java', icon: 'fab fa-java', level: 70 },
-      { name: 'JavaScript', icon: 'fab fa-js', level: 60 },
-      { name: 'C', icon: 'fas fa-code', level: 50 },
+      { name: 'Python', icon: 'fab fa-python', level: 60 ,levelText:'60%'},
+      { name: 'Java', icon: 'fab fa-java', level: 70,levelText:'70%' },
+      { name: 'JavaScript', icon: 'fab fa-js', level: 60,levelText:'60%' },
+      { name: 'C', icon: 'fas fa-code', level: 60 ,levelText:'60%' },
     ],
   },
   {
     category: 'Web Technologies',
     skills: [
-      { name: 'HTML5', icon: 'fab fa-html5', level: 95 },
-      { name: 'CSS3', icon: 'fab fa-css3-alt', level: 73 },
-      { name: 'React', icon: 'fab fa-react', level: 47 },
-      { name: 'Node.js', icon: 'fab fa-node-js', level: 30 },
+      { name: 'HTML5', icon: 'fab fa-html5', level: 95 ,levelText:'95%' },
+      { name: 'CSS3', icon: 'fab fa-css3-alt', level: 73 ,levelText:'73%'},
+      { name: 'React', icon: 'fab fa-react', level: 47 , levelText:'47%' },
+      { name: 'Node.js', icon: 'fab fa-node-js', level: 30 ,levelText:'30%' },
     ],
   },
   {
     category: 'Tools & Technologies',
     skills: [
-      { name: 'Git', icon: 'fab fa-git-alt', level: 85 },
-      { name: 'GitHub', icon: 'fab fa-github', level: 80 },
-      { name: 'Docker', icon: 'fab fa-docker', level: 60 },
+      { name: 'Git', icon: 'fab fa-git-alt', level: 85 ,levelText:'85%'},
+      { name: 'GitHub', icon: 'fab fa-github', level: 80 ,levelText:'80%'},
+      { name: 'Docker', icon: 'fab fa-docker', level: 60 ,levelText:'60%'},
     ],
   },
 ];
 
 const projectsData = [
-  {
-    title: 'Annual Report Generation System',
-    category: 'web',
-    image: 'assets/images/Projects/project1.png',
-    description: 'This platform streamlines data collection, processing, and reporting across departments like Admissions, Finance, Academics, and Research. It ensures efficient workflows and seamless institutional report generation.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
-    liveLink: '#',
-    codeLink: '#',
-  },
+ 
   {
     title: 'AI Voice & Music Production Studio',
     category: 'ml',
-    image: 'assets/images/Projects/project2.png',
+    image: project2,
     description: 'AI-ML Based Software for Music production using human prompts.',
     techStack: ['Python', 'TensorFlow', 'Pytorch', 'MusicGen', 'AudioGen', 'GTTS', 'Matplotlib'],
     liveLink: '#',
     codeLink: 'https://github.com/1Rajveer-Singh/AI-Projects/tree/main/Al%20Voice%20%26%20Music%20Production%20Studio',
   },
-  {
-    title: 'Fitness Tracking App',
-    category: 'app',
-    image: 'assets/images/projects/project3.jpg',
-    description: 'Mobile application for tracking workouts, nutrition, and setting fitness goals with personalized recommendations.',
-    techStack: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-    liveLink: '#',
-    codeLink: '#',
-  },
+
   {
     title: 'Library Management System',
     category: 'web',
-    image: 'assets/images/Projects/project4.png',
+    image: project4,
     description: 'Fully functional LSM platform with user authentication, product management, and payment integration.',
     techStack: ['HTML/CSS', 'JavaScript', 'PHP', 'MySQL'],
     liveLink: 'https://www.librarymanagementsystem-rk.great-site.net/?i=1',
@@ -93,15 +82,7 @@ const projectsData = [
     liveLink: '#',
     codeLink: '#',
   },
-  {
-    title: 'Task Management App',
-    category: 'app',
-    image: 'assets/images/projects/project6.jpg',
-    description: 'Productivity application for managing tasks, setting reminders, and tracking project progress.',
-    techStack: ['Flutter', 'Dart', 'Firebase', 'SQLite'],
-    liveLink: '#',
-    codeLink: '#',
-  },
+  
 ];
 
 const filterOptions = ['all', 'web', 'app', 'ml'];
@@ -125,309 +106,350 @@ const timelineData = [
   },
   {
     icon: <FaCertificate className="text-xl text-white" />,
-    title: 'Machine Learning Specialization',
-    institution: 'Coursera - Stanford University',
-    date: 'June 2023',
+    title: 'WebHackthon:SPHINX 24',
+    institution: 'MNIT Jaipur',
+    date: 'November 2024',
     description:
-      'Comprehensive course covering supervised learning, neural networks, and machine learning systems design.',
-    credentialLink: '#',
+      'Built a web-based platform to streamline student, faculty, and administrative data management at MNIT Jaipur 24-Hour Web-A-Thon (Nov 8–9, 2024).',
+    credentialLink: 'https://drive.google.com/file/d/1qaD4cKw6jkdn91vDKfn_zT-DmeMWat2Y/view?usp=drive_link',
   },
   {
     icon: <FaCertificate className="text-xl text-white" />,
-    title: 'Full Stack Web Development',
+    title: 'Data Lake: Design, Architecture, and Implementation',
     institution: 'Udemy',
-    date: 'January 2023',
+    date: 'April 2025',
     description:
-      'Advanced course on modern web development with MERN stack (MongoDB, Express, React, Node.js).',
-    credentialLink: '#',
+      'Foundational understanding of Data Lake concepts, design principles, architectural patterns, implementation strategies, and best practices for managing and securing data at scale.',
+    credentialLink: 'https://udemy-certificate.s3.amazonaws.com/image/UC-cd9265da-238d-4765-a883-93aed16e6c3d.jpg',
   },
-  {
-    icon: <FaCertificate className="text-xl text-white" />,
-    title: 'AWS Certified Cloud Practitioner',
-    institution: 'Amazon Web Services',
-    date: 'August 2022',
-    description:
-      'Foundational understanding of AWS Cloud services, security, architecture, and pricing models.',
-    credentialLink: '#',
-  },
+  
 ];
-
+const dividerStyle = {
+  width: "100%",
+  height: "2px",
+    // Adds space above and below the line
+};
 const Content1 = () => {
   const [filter, setFilter] = useState('all');
 
   const filteredProjects =
     filter === 'all' ? projectsData : projectsData.filter((p) => p.category === filter);
 
-  return (
-    <>
-      <section id="home" className="bg-gray-900 text-white py-20 px-6 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
-        
-        {/* Content */}
-        <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Hello, I'm <span className="text-blue-500">Rajveer Singh</span>
-          </h1>
-          <h2 className="text-xl md:text-2xl text-gray-400 mt-4">
-            B.Tech Computer Science & Engineering Student
-          </h2>
-          <p className="mt-6 text-gray-300 leading-relaxed">
-            Passionate about software development, machine learning, and building
-            innovative solutions to real-world problems through technology.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
-            <a
-              href="#projects"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="border border-blue-500 hover:bg-blue-500 hover:text-white text-blue-500 px-6 py-3 rounded-lg font-medium transition"
-            >
-              Contact Me
-            </a>
+    return (
+      <>
+        <style>{`
+          @keyframes gradient-x {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-x 4s ease infinite;
+          }
+        `}</style>
+        <section
+  id="home"
+  className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] text-white py-24 px-6 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto"
+>
+          {/* Hero Content */}
+          <div className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-wide">
+              Hello, I'm
+              <span className="ml-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
+                Rajveer Singh
+              </span>
+            </h1>
+            <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-300 mt-4 font-medium">
+              B.Tech Computer Science & Engineering Student
+            </h2>
+            <p className="mt-6 text-gray-400 leading-relaxed max-w-lg mx-auto md:mx-0">
+              I'm passionate about software development, machine learning, and building innovative
+              solutions to real-world problems through technology.
+            </p>
+    
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
+              <a
+                href="#projects"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition transform hover:-translate-y-1 hover:scale-105"
+              >
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-full font-semibold shadow-lg transition transform hover:-translate-y-1 hover:scale-105"
+              >
+                Contact Me
+              </a>
+            </div>
+    
+            {/* Social Icons */}
+            <div className="flex gap-6 mt-12 justify-center md:justify-start text-2xl">
+              <a
+                href="https://github.com/1Rajveer-Singh"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:scale-110"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rajveer-singh-997219291"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:scale-110"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href="https://twitter.com/your-twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:scale-110"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="mailto:1.rajveersinghcse@gmail.com"
+                aria-label="Email"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:scale-110"
+              >
+                <FaEnvelope />
+              </a>
+            </div>
           </div>
-
-          {/* Social Icons */}
-          <div className="flex gap-4 mt-6 justify-center md:justify-start text-2xl">
-            <a
-              href="https://github.com/1Rajveer-Singh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rajveer-singh-997219291"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="https://twitter.com/your-twitter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400"
-            >
-              <FaTwitter />
-            </a>
-            <a 
-              href="mailto:1.rajveersinghcse@gmail.com" 
-              className="hover:text-blue-400"
-            >
-              <FaEnvelope />
-            </a>
-          </div>
-        </div>
-
-        {/* Image */}
-        <div className="md:w-1/2 flex justify-center">
-          <img
-            src="/assets/images/owner/person.jpeg"
-            alt="Rajveer Singh - B.Tech CSE Student"
-            className="w-72 h-72 object-cover rounded-full shadow-lg border-4 border-blue-500"
-          />
-        </div>
-      </section>
-
-      {/* About section */}
-      <section id="about" className="bg-gray-900 text-white py-20 px-6 max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">About Me</h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
-        </div>
-
-        {/* Content */}
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          {/* Image */}
-          <div className="md:w-1/2 flex justify-center">
+    
+          {/* Hero Image */}
+          <div className="hidden md:flex justify-center md:justify-start ml-[-150px]">
             <img
-              src="assets/images/owner/person.jpeg"
-              alt="About Rajveer Singh"
-              className="w-72 h-72 object-cover rounded-xl shadow-lg border-4 border-blue-500"
+              src={personImage}
+              alt="Rajveer Singh - B.Tech CSE Student"
+              className="w-60 h-60 sm:w-72 sm:h-72 object-cover rounded-full shadow-2xl border-4 border-blue-400 hover:scale-105 hover:shadow-blue-500/50 transition duration-500"
             />
           </div>
-
-          {/* Text */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h3 className="text-2xl font-semibold mb-4">Who am I?</h3>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              I'm a 3<sup>rd</sup> B.Tech Computer Science & Engineering student at Jodhpur Institute of
-              Engineering & Technology, passionate about creating innovative software solutions and exploring new
-              technologies.
-            </p>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              With a strong foundation in computer science fundamentals and practical experience in software
-              development, I enjoy tackling complex problems and building applications that make a difference.
-            </p>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              My areas of interest include web development, machine learning, data science, and cloud computing.
-              I'm constantly learning and expanding my skillset to stay current with industry trends.
-            </p>
-
-            {/* Personal Info */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-400 mb-6">
-              <div className="flex items-center gap-2">
-                <FaUser className="text-blue-500" />
-                <span><strong>Name:</strong> Rajveer Singh</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaGraduationCap className="text-blue-500" />
-                <span><strong>Degree:</strong> B.Tech in Computer Science</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-blue-500" />
-                <span><strong>Location:</strong> Jodhpur, India</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaEnvelope className="text-blue-500" />
-                <span><strong>Email:</strong> 1.rajveersinghcse@gmail.com</span>
+        </section>
+        <div style={dividerStyle}></div>
+        {/* About section */}
+        <section id="about" className="bg-gray-900 text-white py-20 px-6 max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">About Me</h2>
+            <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+          </div>
+    
+          {/* Card Container */}
+          <div className="flex justify-center">
+            <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-4xl w-full text-center flex flex-col md:flex-row items-center gap-10">
+              {/* Text Section */}
+              <div className="md:w-2/3 text-center md:text-left relative md:right-[-120px]">
+                <h3 className="text-2xl font-semibold mb-6">Who am I?</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  I'm a 3<sup>rd</sup> year B.Tech Computer Science & Engineering student at Jodhpur Institute of
+                  Engineering & Technology, passionate about creating innovative software solutions and exploring new
+                  technologies.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  With a strong foundation in computer science fundamentals and practical experience in software
+                  development, I enjoy tackling complex problems and building applications that make a difference.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  My areas of interest include web development, machine learning, data science, and cloud computing. I'm
+                  constantly learning and expanding my skillset to stay current with industry trends.
+                </p>
+    
+                {/* Personal Info */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-400 mb-6 justify-center">
+                  <div className="flex items-center gap-2 justify-center">
+                    <FaUser className="text-blue-500 text-xl" />
+                    <span><strong>Name:</strong> Rajveer Singh</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <FaGraduationCap className="text-blue-500 text-xl" />
+                    <span><strong>Degree:</strong> B.Tech in Computer Science</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <FaMapMarkerAlt className="text-blue-500 text-xl" />
+                    <span><strong>Location:</strong> Jodhpur, India</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <FaEnvelope className="text-blue-500 text-xl" />
+                    <span><strong>Email:</strong> 1.rajveersinghcse@gmail.com</span>
+                  </div>
+                </div>
+    
+                {/* Download Button */}
+                <div className="flex justify-center items-center">
+                  <a
+                    href="assets/docs/Resume.pdf"
+                    download
+                    className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg transition transform hover:-translate-y-1"
+                  >
+                    Download CV <FaDownload className="ml-2" />
+                  </a>
+                </div>
               </div>
             </div>
-
-            {/* Download Button */}
-            <a
-              href="assets/docs/Resume.pdf"
-              download
-              className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              Download CV <FaDownload className="inline ml-2" />
-            </a>
           </div>
-        </div>
-      </section>
-
+        </section>
+     
+    
+        <div style={dividerStyle}></div>
       {/* Skills section */}
       <section id="skills" className="bg-gray-900 text-white py-20 px-4 max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">My Skills</h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
-        </div>
+  {/* Header */}
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold">My Skills</h2>
+    <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+  </div>
 
-        {/* Skills Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {skillsData.map((category) => (
-            <div key={category.category} className="bg-gray-800 rounded-xl shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-400">{category.category}</h3>
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center gap-3 mb-1">
-                      <i className={`${skill.icon} text-xl text-blue-500`}></i>
-                      <h4 className="text-lg font-medium">{skill.name}</h4>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                      <div
-                        className="bg-blue-500 h-3 rounded-full transition-all duration-500"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+  {/* Skills Container */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {skillsData.map((category) => (
+      <div key={category.category} className="bg-gray-800 rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-semibold mb-4 text-blue-400">{category.category}</h3>
+        <div className="space-y-4">
+          {category.skills.map((skill) => (
+            <div key={skill.name}>
+              <div className="flex items-center gap-3 mb-1">
+                <i className={`${skill.icon} text-xl text-blue-500`}></i>
+                <h4 className="text-lg font-medium">{skill.name}</h4>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="flex justify-center mt-12">
-          <a
-            href="pages/Skills.html"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-          >
-            Visit all Skills →
-          </a>
-        </div>
-      </section>
-
-      {/* Projects section */}
-      <section id="projects" className="bg-gray-900 text-white py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">My Projects</h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-10 flex-wrap">
-          {filterOptions.map((option) => (
-            <button
-              key={option}
-              onClick={() => setFilter(option)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-                filter === option ? 'bg-blue-500 text-white' : 'bg-gray-700 hover:bg-gray-600'
-              }`}
-            >
-              {option === 'all' ? 'All' : option === 'web' ? 'Web Dev' : option === 'app' ? 'App Dev' : 'Machine Learning'}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col"
-            >
-              <img src={project.image} alt={project.title} className="h-48 w-full object-cover" />
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-300 flex-grow">{project.description}</p>
-                <div className="flex flex-wrap gap-2 my-3">
-                  {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="bg-blue-600 text-xs px-2 py-1 rounded-full text-white"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4 mt-auto">
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
-                    >
-                      <FaLink className="inline" /> Live Demo
-                    </a>
-                  )}
-                  {project.codeLink && (
-                    <a
-                      href={project.codeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
-                    >
-                      <FaCode className="inline" /> Code
-                    </a>
-                  )}
+              <div className="w-full bg-gray-700 rounded-full h-5 relative overflow-hidden">
+                <div
+                  className="bg-blue-500 h-5 rounded-full flex items-center justify-end pr-2 text-sm font-semibold"
+                  style={{ width: `${skill.level}%` }}
+                >
+                  {skill.levelText}
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+    ))}
+  </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mt-12">
-          <a
-            href="pages/projects.html"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-          >
-            Visit all Projects →
-          </a>
+  {/* CTA Button */}
+  <div className="flex justify-center mt-12">
+    <a
+      href="pages/Skills.html"
+      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
+    >
+      Visit all Skills →
+    </a>
+  </div>
+</section>
+<div style={dividerStyle}></div>
+{/* Projects section */}
+<section id="projects" className="bg-gray-900 text-white py-20 px-4 max-w-7xl mx-auto">
+  {/* Heading */}
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold">My Projects</h2>
+    <div className="w-24 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+  </div>
+
+  {/* Filter Buttons */}
+  <div className="flex justify-center gap-4 mb-10 flex-wrap">
+    {filterOptions.map((option) => (
+      <button
+        key={option}
+        onClick={() => setFilter(option)}
+        className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+          filter === option ? 'bg-blue-500 text-white' : 'bg-gray-700 hover:bg-gray-600'
+        }`}
+      >
+        {option === 'all'
+          ? 'All'
+          : option === 'web'
+          ? 'Web Dev'
+          : option === 'app'
+          ? 'App Dev'
+          : 'Machine Learning'}
+      </button>
+    ))}
+  </div>
+
+  {/* Projects Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {filteredProjects.length === 0 ? (
+      <div className="col-span-full text-center py-20">
+        <p className="text-gray-400 text-lg font-medium">
+          No projects found in this category.
+        </p>
+      </div>
+    ) : (
+      filteredProjects.map((project, index) => (
+        <div
+          key={index}
+          className="bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col"
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-48 w-full object-cover"
+          />
+          <div className="p-6 flex flex-col flex-grow">
+            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+            <p className="text-sm text-gray-300 flex-grow">{project.description}</p>
+            <div className="flex flex-wrap gap-2 my-3">
+              {project.techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="bg-blue-600 text-xs px-2 py-1 rounded-full text-white"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4 mt-auto flex-wrap">
+              {project.liveLink && project.liveLink !== '#' ? (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
+                >
+                  <FaLink className="inline" /> Live Demo
+                </a>
+              ) : (
+                <span className="bg-red-100 text-red-700 px-3 py-2 rounded-lg text-sm font-semibold shadow-inner">
+                  Not Available
+                </span>
+              )}
+
+              {project.codeLink && (
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
+                >
+                  <FaCode className="inline" /> Code
+                </a>
+              )}
+            </div>
+          </div>
         </div>
-      </section>
+      ))
+    )}
+  </div>
+
+  {/* CTA Button */}
+  <div className="flex justify-center mt-12">
+    <a
+      href="pages/projects.html"
+      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
+    >
+      Visit all Projects →
+    </a>
+  </div>
+</section>
+
+<div style={dividerStyle}></div>
 
       {/* Education section */}
       <section id="education" className="py-16 bg-gray-50">
@@ -473,9 +495,12 @@ const Content1 = () => {
           </div>
         </div>
       </section>
-
+      <div style={dividerStyle}></div>
       {/* Contact section */}
-      <section id="contact" className="py-16 bg-gray-50">
+      <section
+  id="contact"
+  className="py-16 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
+>
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-12">

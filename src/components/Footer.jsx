@@ -32,13 +32,14 @@ const Footer = () => {
           <h4 className="text-xl font-semibold text-white mb-4">Stay Updated</h4>
           <p className="mb-4">Subscribe to my newsletter for latest projects and updates.</p>
           <form method="POST" action="php/newsletter.php" className="flex">
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black"
-            />
+          <input
+  type="email"
+  name="email"
+  placeholder="Enter your email"
+  required
+  className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black bg-white"
+/>
+
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg"
