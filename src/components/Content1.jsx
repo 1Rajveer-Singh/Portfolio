@@ -150,7 +150,7 @@ const Content1 = () => {
         `}</style>
         <section
   id="home"
-  className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] text-white py-24 px-6 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto"
+  className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] text-white py-24 px-6 flex flex-col md:flex-row items-center justify-between  mx-auto"
 >
           {/* Hero Content */}
           <div className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
@@ -224,17 +224,18 @@ const Content1 = () => {
           </div>
     
           {/* Hero Image */}
-          <div className="hidden md:flex justify-center md:justify-start ml-[-150px]">
-            <img
-              src={personImage}
-              alt="Rajveer Singh - B.Tech CSE Student"
-              className="w-60 h-60 sm:w-72 sm:h-72 object-cover rounded-full shadow-2xl border-4 border-blue-400 hover:scale-105 hover:shadow-blue-500/50 transition duration-500"
-            />
-          </div>
+          <div className="hidden md:flex justify-center md:justify-start relative left-[-150px]">
+  <img
+    src={personImage}
+    alt="Rajveer Singh - B.Tech CSE Student"
+    className="w-60 h-60 sm:w-72 sm:h-72 object-cover rounded-full shadow-2xl border-4 border-blue-400 hover:scale-105 hover:shadow-blue-500/50 transition duration-500"
+  />
+</div>
+
         </section>
         <div style={dividerStyle}></div>
         {/* About section */}
-        <section id="about" className="bg-gray-900 text-white py-20 px-6 max-w-7xl mx-auto">
+        <section id="about" className="bg-gray-900 text-white py-20 px-6 mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold">About Me</h2>
@@ -246,21 +247,18 @@ const Content1 = () => {
             <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-4xl w-full text-center flex flex-col md:flex-row items-center gap-10">
               {/* Text Section */}
               <div className="md:w-2/3 text-center md:text-left relative md:right-[-120px]">
-                <h3 className="text-2xl font-semibold mb-6">Who am I?</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  I'm a 3<sup>rd</sup> year B.Tech Computer Science & Engineering student at Jodhpur Institute of
-                  Engineering & Technology, passionate about creating innovative software solutions and exploring new
-                  technologies.
-                </p>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  With a strong foundation in computer science fundamentals and practical experience in software
-                  development, I enjoy tackling complex problems and building applications that make a difference.
-                </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  My areas of interest include web development, machine learning, data science, and cloud computing. I'm
-                  constantly learning and expanding my skillset to stay current with industry trends.
-                </p>
-    
+  <h3 className="text-2xl font-semibold mb-6">Who am I?</h3>
+  <p className="text-gray-300 leading-relaxed mb-4">
+    I'm a third-year B.Tech student in Computer Science & Engineering at Jodhpur Institute of Engineering & Technology. I'm passionate about developing innovative software solutions and exploring emerging technologies.
+  </p>
+  <p className="text-gray-300 leading-relaxed mb-4">
+    With a solid foundation in computer science principles and hands-on experience in software development, I enjoy solving complex problems and building impactful applications.
+  </p>
+  <p className="text-gray-300 leading-relaxed mb-6">
+    My key interests include web development, machine learning, data science, and cloud computing. I’m committed to continuous learning and staying updated with the latest industry trends.
+  </p>
+
+
                 {/* Personal Info */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-400 mb-6 justify-center">
                   <div className="flex items-center gap-2 justify-center">
@@ -299,7 +297,7 @@ const Content1 = () => {
     
         <div style={dividerStyle}></div>
       {/* Skills section */}
-      <section id="skills" className="bg-gray-900 text-white py-20 px-4 max-w-7xl mx-auto">
+      <section id="skills" className="bg-gray-900 text-white py-20 px-4  mx-auto">
   {/* Header */}
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold">My Skills</h2>
@@ -345,7 +343,7 @@ const Content1 = () => {
 </section>
 <div style={dividerStyle}></div>
 {/* Projects section */}
-<section id="projects" className="bg-gray-900 text-white py-20 px-4 max-w-7xl mx-auto">
+<section id="projects" className="bg-gray-900 text-white py-20 px-4  mx-auto">
   {/* Heading */}
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold">My Projects</h2>
@@ -406,32 +404,37 @@ const Content1 = () => {
               ))}
             </div>
             <div className="flex gap-4 mt-auto flex-wrap">
-              {project.liveLink && project.liveLink !== '#' ? (
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
-                >
-                  <FaLink className="inline" /> Live Demo
-                </a>
-              ) : (
-                <span className="bg-red-100 text-red-700 px-3 py-2 rounded-lg text-sm font-semibold shadow-inner">
-                  Not Available
-                </span>
-              )}
+  {project.liveLink && project.liveLink !== '#' ? (
+    <a
+      href={project.liveLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
+    >
+      <FaLink className="inline" /> Live Demo
+    </a>
+  ) : (
+    <span className="bg-red-100 text-red-700 px-3 py-2 rounded-lg text-sm font-semibold shadow-inner">
+      Not Available
+    </span>
+  )}
 
-              {project.codeLink && (
-                <a
-                  href={project.codeLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
-                >
-                  <FaCode className="inline" /> Code
-                </a>
-              )}
-            </div>
+  {project.codeLink && project.codeLink !== '#' ? (
+    <a
+      href={project.codeLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-1 transition"
+    >
+      <FaCode className="inline" /> Code
+    </a>
+  ) : (
+    <span className="bg-yellow-100 text-yellow-800 px-3 py-2 rounded-lg text-sm font-semibold shadow-inner">
+      Not Available
+    </span>
+  )}
+</div>
+
           </div>
         </div>
       ))
@@ -497,6 +500,7 @@ const Content1 = () => {
       </section>
       <div style={dividerStyle}></div>
       {/* Contact section */}
+      
       <section
   id="contact"
   className="py-16 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
