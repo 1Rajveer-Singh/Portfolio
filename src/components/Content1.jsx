@@ -1,3 +1,4 @@
+import ResumePDF from "../assets/docs/Resume.pdf";
 import React, { useState } from 'react';
 import personImage from '../assets/images/Owner/Per.jpeg';
 
@@ -282,7 +283,7 @@ const Content1 = () => {
                 {/* Download Button */}
                 <div className="flex justify-center items-center">
                   <a
-  href="../assets/docs/Resume.pdf"
+  href={ResumePDF}
   download="Resume.pdf"
   className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg transition transform hover:-translate-y-1"
 >
