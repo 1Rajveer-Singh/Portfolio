@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import personImage from '../assets/images/Owner/Person.jpeg';
+import personImage from '../assets/images/Owner/Per.jpeg';
 
-import project2 from '../assets/images/Projects/project2.png';
-import project4 from '../assets/images/Projects/project4.png';
+import project2 from '../assets/images/Projects/pr2.png';
+import project4 from '../assets/images/Projects/pro4.png';
 
 import { 
   FaEnvelope, 
