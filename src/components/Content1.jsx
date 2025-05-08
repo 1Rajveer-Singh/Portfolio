@@ -151,7 +151,7 @@ const Content1 = () => {
         `}</style>
         <section
   id="home"
-  className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] text-white py-24 px-6 flex flex-col md:flex-row items-center justify-between  mx-auto"
+  className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] text-white py-24 px-6 flex flex-col md:flex-row items-center justify-between pt-[20px]  mx-auto"
 >
           {/* Hero Content */}
           <div className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
@@ -334,14 +334,7 @@ const Content1 = () => {
   </div>
 
   {/* CTA Button */}
-  <div className="flex justify-center mt-12">
-    <a
-      href="pages/Skills.html"
-      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-    >
-      Visit all Skills →
-    </a>
-  </div>
+ 
 </section>
 <div style={dividerStyle}></div>
 {/* Projects section */}
@@ -444,14 +437,7 @@ const Content1 = () => {
   </div>
 
   {/* CTA Button */}
-  <div className="flex justify-center mt-12">
-    <a
-      href="pages/projects.html"
-      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
-    >
-      Visit all Projects →
-    </a>
-  </div>
+ 
 </section>
 
 <div style={dividerStyle}></div>
@@ -490,14 +476,7 @@ const Content1 = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <a
-              href="pages/Education.html"
-              className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition"
-            >
-              View all Certifications →
-            </a>
-          </div>
+          
         </div>
       </section>
       <div style={dividerStyle}></div>
