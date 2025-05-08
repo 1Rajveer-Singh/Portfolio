@@ -1,4 +1,4 @@
-import ResumePDF from "../assets/docs/Resume.pdf";
+import Resume from '../../assets/docs/Resume.pdf';
 import React, { useState } from 'react';
 import personImage from '../assets/images/Owner/Per.jpeg';
 
@@ -281,16 +281,16 @@ const Content1 = () => {
                 </div>
     
                 {/* Download Button */}
-                <div className="flex justify-center items-center">
-                  <a
-  href={ResumePDF}
-  download="Resume.pdf"
-  className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg transition transform hover:-translate-y-1"
->
-  Download CV <FaDownload className="ml-2" />
-</a>
-
-                </div>
+                <div className="mt-10 text-center">
+  <a
+    href={Resume}
+    download="Resume.pdf"
+    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-blue-500 text-white text-lg font-semibold rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105"
+  >
+    <FaDownload className="animate-bounce-slow" size={18} />
+    Download CV
+  </a>
+</div>
               </div>
             </div>
           </div>
